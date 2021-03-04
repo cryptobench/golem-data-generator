@@ -8,7 +8,7 @@ declare -a StringArray=("2rec" "blueshade" "Costanza" "ederenn" "etam" "jamuszyn
 mkdir -p "data/"
 
 # Modify integers below to decide how many images to generate in the training folders.
-for run in {1..500}; do
+for run in {1..10}; do
 
   for admin in ${StringArray[@]}; do
     NUMBER=$(jot -r 1 1 35)
@@ -25,4 +25,4 @@ done
 
 
 FILENAME=$(cat /dev/urandom | env LC_CTYPE=C tr -cd 'a-f0-9' | head -c 32)
-zip -r /golem/output/data.zip data/
+7z a /golem/output/data.zip data/*

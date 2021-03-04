@@ -30,9 +30,9 @@ from utils import (
 
 async def main(subnet_tag, driver=None, network=None):
     package = await vm.repo(
-        image_hash="16497439b1f4c31e39b76dc12b68a45e530e59fafdf73ed2ed92fc7e",
+        image_hash="c9893131102661f841aca2b1ce259c2098f8d9cd0e649823ba8f9350",
         min_mem_gib=4,
-        min_storage_gib=2.0,
+        min_storage_gib=10.0,
     )
 
     async def worker(ctx: WorkContext, tasks):

@@ -3,7 +3,7 @@ VOLUME /golem/input /golem/output
 RUN apt update
 RUN apt install -y imagemagick
 RUN apt install -y athena-jot 
-RUN apt install -y zip
+RUN apt install -y p7zip-full
 COPY generate_data.sh /golem/entrypoint/
 COPY directions.txt /golem/entrypoint/
 COPY admin_images/ /golem/entrypoint/admin_images/
