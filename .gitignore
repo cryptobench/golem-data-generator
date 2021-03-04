@@ -1,0 +1,4 @@
+__pycache__/
+blender-yapapi.log
+*.gvmi
+output/*
