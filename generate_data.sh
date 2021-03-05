@@ -8,7 +8,7 @@ declare -a StringArray=("2rec" "blueshade" "Costanza" "ederenn" "etam" "jamuszyn
 mkdir -p "data/"
 
 # Modify integers below to decide how many images to generate in the training folders.
-for run in {1..10}; do
+for run in {1..100}; do
 
   for admin in ${StringArray[@]}; do
     NUMBER=$(jot -r 1 1 35)
@@ -18,11 +18,11 @@ for run in {1..10}; do
     DIRECTION=$(shuf -n1 directions.txt | cut -d$'\t' -f1)
     RAND=$(cat /dev/urandom | env LC_CTYPE=C tr -cd 'a-f0-9' | head -c 32)
     RANDNAMEROTATE=$(cat /dev/urandom | env LC_CTYPE=C tr -cd 'a-f0-9' | head -c 32)
-    convert +noise Gaussian -evaluate add "${NUMBER}%" admin_images/${admin}.png "data/${RANDNAMEROTATE}.png" && convert "data/${RANDNAMEROTATE}.png" -gravity ${DIRECTION} -crop ${X}%x${Y}%+0+0 "data/${RANDNAMEROTATE}.png"
+    convert +noise Gaussian -evaluate add "${NUMBER}%" admin_images/${admin}.png "/golem/output/${RANDNAMEROTATE}.png" && convert "/golem/output/${RANDNAMEROTATE}.png" -gravity ${DIRECTION} -crop ${X}%x${Y}%+0+0 "/golem/output/${RANDNAMEROTATE}.png"
   done
 done
 
 
 
 FILENAME=$(cat /dev/urandom | env LC_CTYPE=C tr -cd 'a-f0-9' | head -c 32)
-7z a /golem/output/data.zip data/*
+7z a /golem/output/data.zip /golem/output/*

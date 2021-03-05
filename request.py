@@ -30,8 +30,8 @@ from utils import (
 
 async def main(subnet_tag, driver=None, network=None):
     package = await vm.repo(
-        image_hash="c9893131102661f841aca2b1ce259c2098f8d9cd0e649823ba8f9350",
-        min_mem_gib=4,
+        image_hash="2c5d9a80847eb147261c4e33df6e6955666ddd932ec40fd8b005f799",
+        min_mem_gib=1,
         min_storage_gib=10.0,
     )
 
